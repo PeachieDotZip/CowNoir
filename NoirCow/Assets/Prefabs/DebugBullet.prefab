@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 7214686239075725226}
-  shootSpeed: 20
+  shootSpeed: 100
 --- !u!58 &7214686239075725225
 CircleCollider2D:
   m_ObjectHideFlags: 0

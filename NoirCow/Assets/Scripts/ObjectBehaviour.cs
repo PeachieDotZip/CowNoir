@@ -1,0 +1,34 @@
+/*****************************************************************************
+// File Name :         ObjectBehaviour.cs
+// Author :            Harrison Weber
+// Creation Date :     September 21st, 2023
+//
+// Brief Description : Mainly used for debugging as of now. Records when the umbrella is poking, then responds to being poked.
+*****************************************************************************/
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObjectBehaviour : MonoBehaviour
+{
+    private UmbrellaBehaviour umbrella;
+    private Animation anim;
+    private ParticleSystem dust;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        umbrella = FindObjectOfType<UmbrellaBehaviour>();
+        anim = GetComponent<Animation>();
+        dust = GetComponentInChildren<ParticleSystem>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Umbrella") && umbrella.isPoking == true)
+        {
+            anim.Play();
+            dust.Play();
+        }
+    }
+}
