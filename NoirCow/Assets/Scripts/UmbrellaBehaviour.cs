@@ -91,11 +91,11 @@ public class UmbrellaBehaviour : MonoBehaviour
     public void BashVoid1()
     {
         Debug.Log("Bash!");
-        isPoking = true;
+        isBashing = true;
     }
     public void BashVoid2()
     {
         Debug.Log("Bash End");
-        isPoking = false;
+        isBashing = false;
     }
 }

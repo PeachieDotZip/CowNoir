@@ -11,15 +11,39 @@ using UnityEngine;
 
 public class DebugBulletBehavior : MonoBehaviour
 {
+    [SerializeField] private int lifetime;
     public Rigidbody2D rb2d;
     public float shootSpeed;
+    private UmbrellaBehaviour umbrella;
+    private Transform umbrellaRotation;
+    private Collider2D bulletCollider;
+    public GameObject destroyEffect;
+    //public GameObject ricochetEffect;
+    public GameObject bashEffect;
 
     /// <summary>
-    /// Update is called once per frame
+    /// Grabs umbrella script
+    /// </summary>
+    private void Start()
+    {
+        umbrella = FindObjectOfType<UmbrellaBehaviour>();
+        rb2d.velocity = shootSpeed * transform.up;
+        umbrellaRotation = umbrella.gameObject.GetComponentInParent<Transform>();
+        bulletCollider = GetComponent<Collider2D>();
+        lifetime = 0;
+    }
+    /// <summary>
+    /// Handles the timer. If bullets stick around for too long, they get deleted to save memory.
     /// </summary>
     private void Update()
     {
-        rb2d.velocity = new Vector2(shootSpeed * 0.2f, rb2d.velocity.y);
+        lifetime++;
+
+        if (lifetime >= 777)
+        {
+            Debug.Log("Bullet deleted of old age");
+            Destroy(gameObject);
+        }
     }
 
     /// <summary>
@@ -28,15 +52,66 @@ public class DebugBulletBehavior : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Umbrella")
+        if (!collision.CompareTag("Umbrella"))
         {
             Debug.Log("Bullet has hit a wall.");
+            Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         else
         {
             Debug.Log("Bullet has hit the Umbrella.");
+
+            if (umbrella.isOpen)
+            {
+                if (umbrella.isBashing == true)
+                {
+                    StartCoroutine(BulletBash());
+                }
+                else
+                {
+                    StartCoroutine(BulletRicochet());
+                }
+            }
         }
 
+    }
+
+    /// <summary>
+    /// Handles what should happen if the bullet is "bashed".
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator BulletBash()
+    {
+        Debug.Log("Bullet Bashed!");
+        bulletCollider.enabled = false;
+        Instantiate(bashEffect, gameObject.transform.position, umbrella.gameObject.transform.rotation);
+        gameObject.transform.rotation = umbrella.gameObject.transform.rotation;
+        rb2d.velocity = (shootSpeed * 0.5f) * umbrella.gameObject.transform.up;
+        lifetime = 0;
+        yield return new WaitForSeconds(.1f);
+        rb2d.velocity = shootSpeed * transform.up;
+        yield return new WaitForSeconds(.1f);
+        bulletCollider.enabled = true;
+    }
+
+    /// <summary>
+    /// Handles what should happen if the bullet simple ricochets off the umbrella.
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator BulletRicochet()
+    {
+        Debug.Log("Bullet Ricocheted!");
+        //Instantiate(ricochetEffect, gameObject.transform.position, Quaternion.identity);
+        bulletCollider.enabled = false;
+        float randomFloat = Random.Range(-88f, 88f);
+        Debug.Log(randomFloat);
+        Quaternion umbrellaRot = umbrella.gameObject.transform.rotation;
+        Quaternion randomChange = Quaternion.Euler(0, 0, randomFloat);
+        transform.rotation = umbrellaRot * randomChange;
+        rb2d.velocity = shootSpeed * transform.up;
+        lifetime = 0;
+        yield return new WaitForSeconds(.1f);
+        bulletCollider.enabled = true;
     }
 }

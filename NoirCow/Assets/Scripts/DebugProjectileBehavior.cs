@@ -48,9 +48,8 @@ public class DebugProjectileBehavior : MonoBehaviour
     {
         isShooting = true;
 
-        Instantiate(bulletPrefab, shootPos.position, Quaternion.identity);
+        Instantiate(bulletPrefab, shootPos.position, transform.rotation);
         yield return new WaitForSeconds(shootTimer);
-
         isShooting = false;
     }
 }
