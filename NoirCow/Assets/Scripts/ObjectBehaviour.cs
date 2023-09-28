@@ -14,6 +14,8 @@ public class ObjectBehaviour : MonoBehaviour
     private UmbrellaBehaviour umbrella;
     private Animation anim;
     private ParticleSystem dust;
+    public bool doesGiveHiddenObject;
+    public GameObject hiddenObject;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,11 @@ public class ObjectBehaviour : MonoBehaviour
         umbrella = FindObjectOfType<UmbrellaBehaviour>();
         anim = GetComponent<Animation>();
         dust = GetComponentInChildren<ParticleSystem>();
+
+        if (doesGiveHiddenObject == false)
+        {
+            hiddenObject = null;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,6 +36,10 @@ public class ObjectBehaviour : MonoBehaviour
         {
             anim.Play();
             dust.Play();
+            if (doesGiveHiddenObject == true)
+            {
+                hiddenObject.SetActive(true);
+            }
         }
     }
 }

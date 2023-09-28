@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95347d0367bba47a22530640939d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifetime: 0
   rb2d: {fileID: 7214686239075725226}
   shootSpeed: 30
   destroyEffect: {fileID: 5237773201093077633, guid: 40ca9b2c1ba45c3428ff922ee75f3dfe, type: 3}

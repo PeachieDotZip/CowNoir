@@ -62,6 +62,51 @@ public partial class @CowInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Inspect"",
+                    ""type"": ""Button"",
+                    ""id"": ""b9dec42d-f6d8-4311-a793-6a27b4e8ebb9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Flip"",
+                    ""type"": ""Button"",
+                    ""id"": ""b3ec2a08-6ff8-4006-b4ac-5aa68abd33c2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""press1"",
+                    ""type"": ""Button"",
+                    ""id"": ""89133431-cfcb-4e55-87d3-756ce266dfbd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""press2"",
+                    ""type"": ""Button"",
+                    ""id"": ""8812b591-82d2-41ed-9fbc-dce967056a66"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""press3"",
+                    ""type"": ""Button"",
+                    ""id"": ""d6d2bd90-df1a-4d76-92be-c681dfdfc5d0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -271,6 +316,94 @@ public partial class @CowInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""UmbrellaPoke"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""088928fb-79c9-4d52-b4aa-f99d96a67595"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Inspect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ec494f1-9491-48bb-994b-c2bb3ff1287a"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Flip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4636c45c-bbe9-4b7d-92ee-6a5a0b193193"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""press1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ce22aac0-39a6-4d20-8e99-12cf08396a06"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""press1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02d77aad-532e-401d-8889-72f8b61f9abd"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""press2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ecef23f-6248-4a10-ad2a-d01096ca1e23"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""press2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb06aec2-71b2-46a0-80f7-8467ad44ad4d"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""press3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a0ca71f7-5924-4d9a-8ca9-da5726ecffaa"",
+                    ""path"": ""<Keyboard>/numpad3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""press3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -862,6 +995,11 @@ public partial class @CowInput : IInputActionCollection2, IDisposable
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_UmbrellaOpen = m_Player.FindAction("UmbrellaOpen", throwIfNotFound: true);
         m_Player_UmbrellaPoke = m_Player.FindAction("UmbrellaPoke", throwIfNotFound: true);
+        m_Player_Inspect = m_Player.FindAction("Inspect", throwIfNotFound: true);
+        m_Player_Flip = m_Player.FindAction("Flip", throwIfNotFound: true);
+        m_Player_press1 = m_Player.FindAction("press1", throwIfNotFound: true);
+        m_Player_press2 = m_Player.FindAction("press2", throwIfNotFound: true);
+        m_Player_press3 = m_Player.FindAction("press3", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -937,6 +1075,11 @@ public partial class @CowInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_UmbrellaOpen;
     private readonly InputAction m_Player_UmbrellaPoke;
+    private readonly InputAction m_Player_Inspect;
+    private readonly InputAction m_Player_Flip;
+    private readonly InputAction m_Player_press1;
+    private readonly InputAction m_Player_press2;
+    private readonly InputAction m_Player_press3;
     public struct PlayerActions
     {
         private @CowInput m_Wrapper;
@@ -945,6 +1088,11 @@ public partial class @CowInput : IInputActionCollection2, IDisposable
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @UmbrellaOpen => m_Wrapper.m_Player_UmbrellaOpen;
         public InputAction @UmbrellaPoke => m_Wrapper.m_Player_UmbrellaPoke;
+        public InputAction @Inspect => m_Wrapper.m_Player_Inspect;
+        public InputAction @Flip => m_Wrapper.m_Player_Flip;
+        public InputAction @press1 => m_Wrapper.m_Player_press1;
+        public InputAction @press2 => m_Wrapper.m_Player_press2;
+        public InputAction @press3 => m_Wrapper.m_Player_press3;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -966,6 +1114,21 @@ public partial class @CowInput : IInputActionCollection2, IDisposable
                 @UmbrellaPoke.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUmbrellaPoke;
                 @UmbrellaPoke.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUmbrellaPoke;
                 @UmbrellaPoke.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUmbrellaPoke;
+                @Inspect.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInspect;
+                @Inspect.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInspect;
+                @Inspect.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInspect;
+                @Flip.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFlip;
+                @Flip.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFlip;
+                @Flip.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFlip;
+                @press1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress1;
+                @press1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress1;
+                @press1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress1;
+                @press2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress2;
+                @press2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress2;
+                @press2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress2;
+                @press3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress3;
+                @press3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress3;
+                @press3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress3;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -982,6 +1145,21 @@ public partial class @CowInput : IInputActionCollection2, IDisposable
                 @UmbrellaPoke.started += instance.OnUmbrellaPoke;
                 @UmbrellaPoke.performed += instance.OnUmbrellaPoke;
                 @UmbrellaPoke.canceled += instance.OnUmbrellaPoke;
+                @Inspect.started += instance.OnInspect;
+                @Inspect.performed += instance.OnInspect;
+                @Inspect.canceled += instance.OnInspect;
+                @Flip.started += instance.OnFlip;
+                @Flip.performed += instance.OnFlip;
+                @Flip.canceled += instance.OnFlip;
+                @press1.started += instance.OnPress1;
+                @press1.performed += instance.OnPress1;
+                @press1.canceled += instance.OnPress1;
+                @press2.started += instance.OnPress2;
+                @press2.performed += instance.OnPress2;
+                @press2.canceled += instance.OnPress2;
+                @press3.started += instance.OnPress3;
+                @press3.performed += instance.OnPress3;
+                @press3.canceled += instance.OnPress3;
             }
         }
     }
@@ -1142,6 +1320,11 @@ public partial class @CowInput : IInputActionCollection2, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnUmbrellaOpen(InputAction.CallbackContext context);
         void OnUmbrellaPoke(InputAction.CallbackContext context);
+        void OnInspect(InputAction.CallbackContext context);
+        void OnFlip(InputAction.CallbackContext context);
+        void OnPress1(InputAction.CallbackContext context);
+        void OnPress2(InputAction.CallbackContext context);
+        void OnPress3(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

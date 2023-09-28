@@ -1,5 +1,5 @@
 {
-    "name": "Input",
+    "name": "CowInput",
     "maps": [
         {
             "name": "Player",
@@ -36,6 +36,51 @@
                     "name": "UmbrellaPoke",
                     "type": "Button",
                     "id": "19782cb5-3b4a-420b-bbff-5804c9f446d7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Inspect",
+                    "type": "Button",
+                    "id": "b9dec42d-f6d8-4311-a793-6a27b4e8ebb9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Flip",
+                    "type": "Button",
+                    "id": "b3ec2a08-6ff8-4006-b4ac-5aa68abd33c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "press1",
+                    "type": "Button",
+                    "id": "89133431-cfcb-4e55-87d3-756ce266dfbd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "press2",
+                    "type": "Button",
+                    "id": "8812b591-82d2-41ed-9fbc-dce967056a66",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "press3",
+                    "type": "Button",
+                    "id": "d6d2bd90-df1a-4d76-92be-c681dfdfc5d0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -249,6 +294,94 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "UmbrellaPoke",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "088928fb-79c9-4d52-b4aa-f99d96a67595",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Inspect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2ec494f1-9491-48bb-994b-c2bb3ff1287a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Flip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4636c45c-bbe9-4b7d-92ee-6a5a0b193193",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "press1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ce22aac0-39a6-4d20-8e99-12cf08396a06",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "press1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02d77aad-532e-401d-8889-72f8b61f9abd",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "press2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7ecef23f-6248-4a10-ad2a-d01096ca1e23",
+                    "path": "<Keyboard>/numpad2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "press2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eb06aec2-71b2-46a0-80f7-8467ad44ad4d",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "press3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0ca71f7-5924-4d9a-8ca9-da5726ecffaa",
+                    "path": "<Keyboard>/numpad3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "press3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CowController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class CowController : MonoBehaviour
     private Vector2 movementInput;
     public CowInput cowActions;
     private Animator umbrellaAnim;
+    public GameObject[] gunners;
 
     private void Awake()
     {
@@ -27,15 +29,39 @@ public class CowController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         umbrellaAnim = GetComponentInChildren<Animator>();
     }
-    private void Start()
-    {
-        
-    }
 
 
     private void FixedUpdate()
     {
         rb.velocity = movementInput * speed;
+    }
+
+    private void Update()
+    {
+        if (cowActions.Player.press1.triggered)
+        {
+            gunners[0].SetActive(true);
+            gunners[1].SetActive(false);
+            gunners[2].SetActive(false);
+            gunners[3].SetActive(false);
+            gunners[4].SetActive(false);
+            gunners[5].SetActive(false);
+            gunners[6].SetActive(true);
+        }
+        if (cowActions.Player.press2.triggered)
+        {
+            gunners[0].SetActive(false);
+            gunners[1].SetActive(true);
+            gunners[2].SetActive(true);
+            gunners[3].SetActive(true);
+            gunners[4].SetActive(true);
+            gunners[5].SetActive(true);
+            gunners[6].SetActive(false);
+        }
+        if (cowActions.Player.press3.triggered)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     private void OnMove(InputValue inputValue)
