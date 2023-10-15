@@ -22,6 +22,10 @@ public class CowController : MonoBehaviour
     private Animator umbrellaAnim;
     public GameObject[] gunners;
 
+    /// <summary>
+    /// Assigns cowActions to measure input.
+    /// Assigns rigidbody and animator of umbrella.
+    /// </summary>
     private void Awake()
     {
         cowActions = new CowInput();
@@ -30,12 +34,17 @@ public class CowController : MonoBehaviour
         umbrellaAnim = GetComponentInChildren<Animator>();
     }
 
-
+    /// <summary>
+    /// Controls how fast the player moves.
+    /// </summary>
     private void FixedUpdate()
     {
         rb.velocity = movementInput * speed;
     }
 
+    /// <summary>
+    /// Debug prototype code, remove whenever
+    /// </summary>
     private void Update()
     {
         if (cowActions.Player.press1.triggered)
@@ -64,10 +73,15 @@ public class CowController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Measures input and move player
+    /// </summary>
+    /// <param name="inputValue"></param>
     private void OnMove(InputValue inputValue)
     {
         movementInput = inputValue.Get<Vector2>();
     }
+
     private void OnEnable()
     {
         cowActions.Enable();
