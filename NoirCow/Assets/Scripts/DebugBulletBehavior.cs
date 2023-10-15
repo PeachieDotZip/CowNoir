@@ -21,6 +21,9 @@ public class DebugBulletBehavior : MonoBehaviour
     //public GameObject ricochetEffect;
     public GameObject bashEffect;
 
+    CowController target;
+    Vector2 moveDirection;
+
     /// <summary>
     /// Grabs umbrella script
     /// </summary>
@@ -31,6 +34,11 @@ public class DebugBulletBehavior : MonoBehaviour
         umbrellaRotation = umbrella.gameObject.GetComponentInParent<Transform>();
         bulletCollider = GetComponent<Collider2D>();
         lifetime = 0;
+
+        rb2d = GetComponent<Rigidbody2D>();
+        target = GameObject.FindObjectOfType<CowController>();
+        moveDirection = (target.transform.position - transform.position).normalized * shootSpeed;
+        rb2d.velocity = new Vector2(moveDirection.x, moveDirection.y);
     }
     /// <summary>
     /// Handles the timer. If bullets stick around for too long, they get deleted to save memory.
