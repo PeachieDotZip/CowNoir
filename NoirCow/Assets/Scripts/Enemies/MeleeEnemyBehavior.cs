@@ -58,6 +58,11 @@ public class MeleeEnemyBehavior : MonoBehaviour
             }
         }
 
+        if (enemyHealth == 0)
+        {
+            Destroy(gameObject);
+        }
+
         if (isDazed)
         {
             moveSpeed = 0;
