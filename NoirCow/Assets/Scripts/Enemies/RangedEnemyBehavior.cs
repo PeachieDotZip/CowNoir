@@ -18,9 +18,9 @@ public class RangedEnemyBehavior : MonoBehaviour
     public Transform shootPos;
     public GameObject bulletPrefab;
     public float shootTimer;
-    private bool isShooting;
+    public bool isShooting;
 
-    //public float enemyHealth = 3;
+    public float enemyHealth = 3;
 
     /// <summary>
     /// Grabs the player and sets health
@@ -28,7 +28,6 @@ public class RangedEnemyBehavior : MonoBehaviour
     void Start()
     {
         isShooting = false;
-        //enemyHealth = 3;
         player = FindObjectOfType<CowController>();
     }
 
@@ -46,6 +45,11 @@ public class RangedEnemyBehavior : MonoBehaviour
         {
             StopCoroutine(Shoot());
         }
+
+        if (enemyHealth == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     /// <summary>
@@ -62,14 +66,11 @@ public class RangedEnemyBehavior : MonoBehaviour
         isShooting = false;
     }
 
-    /* Health function
     public void TakeDamage(float damageAmount)
     {
         enemyHealth -= damageAmount;
-        Debug.Log("Ranged enemy lost " + damageAmount + " health. Enemy has " +
-            enemyHealth + " health remaining.");
     }
-    */
+    
 
     /// <summary>
     /// Draws the range so it can be easily tested in the scene view.

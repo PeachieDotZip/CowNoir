@@ -24,6 +24,8 @@ public class DebugBulletBehavior : MonoBehaviour
     CowController target;
     Vector2 moveDirection;
 
+    CowHealthBehavior player;
+
     /// <summary>
     /// Grabs umbrella script
     /// </summary>
@@ -37,6 +39,7 @@ public class DebugBulletBehavior : MonoBehaviour
 
         rb2d = GetComponent<Rigidbody2D>();
         target = GameObject.FindObjectOfType<CowController>();
+        player = GameObject.FindObjectOfType<CowHealthBehavior>();
         moveDirection = (target.transform.position - transform.position).normalized * shootSpeed;
         rb2d.velocity = new Vector2(moveDirection.x, moveDirection.y);
     }
@@ -81,6 +84,17 @@ public class DebugBulletBehavior : MonoBehaviour
                     StartCoroutine(BulletRicochet());
                 }
             }
+        }
+
+        if (collision.gameObject.TryGetComponent<RangedEnemyBehavior>(out RangedEnemyBehavior
+            enemyComponent) && collision.CompareTag("RangedEnemy"))
+        {
+            enemyComponent.TakeDamage(1f);
+        }
+
+        if (collision.CompareTag("Player"))
+        {
+            player.TakeDamage(1f);
         }
 
     }

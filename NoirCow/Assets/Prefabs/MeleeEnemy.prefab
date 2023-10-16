@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -206385902810087703}
   m_Layer: 0
   m_Name: MeleeEnemy
-  m_TagString: Untagged
+  m_TagString: MeleeEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   chargeDelayTime: 0
-  disToPlayer: 30
+  range: 0
   canCharge: 0
   isCharging: 0
   currentSpeed: 0
