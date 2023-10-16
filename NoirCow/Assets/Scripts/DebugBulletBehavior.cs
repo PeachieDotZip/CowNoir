@@ -92,6 +92,12 @@ public class DebugBulletBehavior : MonoBehaviour
             enemyComponent.TakeDamage(1f);
         }
 
+        if (collision.gameObject.TryGetComponent<MeleeEnemyBehavior>(out MeleeEnemyBehavior
+            meleeEnemyComponent) && collision.CompareTag("MeleeEnemy"))
+        {
+            meleeEnemyComponent.TakeDamage(1f);
+        }
+
         if (collision.CompareTag("Player"))
         {
             player.TakeDamage(1f);

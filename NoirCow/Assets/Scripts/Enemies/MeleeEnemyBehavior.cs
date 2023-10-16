@@ -24,6 +24,8 @@ public class MeleeEnemyBehavior : MonoBehaviour
     public Transform player;
     public Transform target;
 
+    public float enemyHealth = 3;
+
 
     private void Start()
     {
@@ -123,5 +125,10 @@ public class MeleeEnemyBehavior : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        enemyHealth -= damageAmount;
     }
 }
