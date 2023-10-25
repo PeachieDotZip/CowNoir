@@ -484,7 +484,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_text: Options
+=======
+<<<<<<< HEAD
+  m_text: How To Play
+=======
+  m_text: Options
+>>>>>>> 6c1f16f42df958120d324e2bed590807675137c6
+>>>>>>> Stashed changes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1326,7 +1334,15 @@ GameObject:
   - component: {fileID: 1520669118}
   - component: {fileID: 1520669117}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Options
+=======
+<<<<<<< HEAD
+  m_Name: How To Play
+=======
+  m_Name: Options
+>>>>>>> 6c1f16f42df958120d324e2bed590807675137c6
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1694,7 +1710,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2144761615}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 71d71c386e453fb45828a97d2fa7a354, type: 3}
+=======
+<<<<<<< HEAD
+  m_Script: {fileID: 11500000, guid: 745bc10041c8feb4789178d54d41688d, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: 71d71c386e453fb45828a97d2fa7a354, type: 3}
+>>>>>>> 6c1f16f42df958120d324e2bed590807675137c6
+>>>>>>> Stashed changes
   m_Name: 
   m_EditorClassIdentifier: 
   optionsScreen: {fileID: 139593083}

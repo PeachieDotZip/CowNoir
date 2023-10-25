@@ -14,6 +14,8 @@ public class DoorScript : MonoBehaviour
     private Animator UIanim;
     public GameObject newRoomTelePoint; // Point in space that the player will get teleported to when they enter this door.
     private CanvasScript canvasScript;
+    public float nextRoomCameraSize;
+    public Transform nextRoomCameraPosition;
     public int doorID;
     // --- DOOR IDs FOR ANIMATIONS: ---
     // 0 = up
@@ -78,5 +80,7 @@ public class DoorScript : MonoBehaviour
     private void DefineNextRoom()
     {
         canvasScript.newRoom = newRoomTelePoint;
+        canvasScript.cameraSize = nextRoomCameraSize;
+        canvasScript.cameraPosition = nextRoomCameraPosition;
     }
 }

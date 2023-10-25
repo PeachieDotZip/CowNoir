@@ -12,7 +12,7 @@ using UnityEngine.InputSystem;
 
 public class UmbrellaBehaviour : MonoBehaviour
 {
-    CowController cow;
+    public CowController cow;
     private Animator anim;
     public bool isPoking;
     public bool isOpen;
@@ -20,17 +20,13 @@ public class UmbrellaBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        cow = GetComponentInParent<CowController>();
+        cow = FindObjectOfType<CowController>();
         anim = GetComponent<Animator>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     private void Update()
     {
+
         if (cow.cowActions.Player.UmbrellaPoke.triggered)
         {
             UmbrellaPoke();

@@ -12,11 +12,14 @@ using UnityEngine.InputSystem;
 
 public class LookAtMouse : MonoBehaviour
 {
+    public GameObject cow;
     /// <summary>
     /// Update the rotation of the object to face the position of the mouse;
     /// </summary>
     private void Update()
     {
+        gameObject.transform.position = cow.transform.position;
+
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);

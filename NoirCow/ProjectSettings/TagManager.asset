@@ -5,8 +5,24 @@ TagManager:
   serializedVersion: 2
   tags:
   - Umbrella
+<<<<<<< Updated upstream
   - RangedEnemy
   - MeleeEnemy
+=======
+<<<<<<< HEAD
+  - Bullet
+  - Bullet_Ricochet
+  - Bullet_Bash
+  - Enemy
+  - Wall
+  - Chair
+  - Crate
+  - Enemy_Charging
+=======
+  - RangedEnemy
+  - MeleeEnemy
+>>>>>>> 6c1f16f42df958120d324e2bed590807675137c6
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

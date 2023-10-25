@@ -63,13 +63,13 @@ public class DebugBulletBehavior : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Umbrella"))
+        if (collision.CompareTag("Wall") || collision.CompareTag("Enemy") || collision.CompareTag("Player"))
         {
-            Debug.Log("Bullet has hit a wall.");
+            Debug.Log("Bullet has hit a wall or enemy.");
             Instantiate(destroyEffect, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        else
+        else if (collision.CompareTag("Umbrella"))
         {
             Debug.Log("Bullet has hit the Umbrella.");
 
@@ -84,6 +84,27 @@ public class DebugBulletBehavior : MonoBehaviour
                     StartCoroutine(BulletRicochet());
                 }
             }
+        }
+        else if (collision.CompareTag("Bullet") || collision.CompareTag("Bullet_Ricochet") || collision.CompareTag("Bullet_Bash"))
+        {
+            // something
+        }
+
+        if (collision.gameObject.TryGetComponent<RangedEnemyBehavior>(out RangedEnemyBehavior
+            enemyComponent) && collision.CompareTag("RangedEnemy"))
+        {
+            enemyComponent.TakeDamage(1f);
+        }
+
+        if (collision.gameObject.TryGetComponent<MeleeEnemyBehavior>(out MeleeEnemyBehavior
+            meleeEnemyComponent) && collision.CompareTag("MeleeEnemy"))
+        {
+            meleeEnemyComponent.TakeDamage(1f);
+        }
+
+        if (collision.CompareTag("Player"))
+        {
+            player.TakeDamage(1f);
         }
 
         if (collision.gameObject.TryGetComponent<RangedEnemyBehavior>(out RangedEnemyBehavior
@@ -119,6 +140,7 @@ public class DebugBulletBehavior : MonoBehaviour
         lifetime = 0;
         yield return new WaitForSeconds(.1f);
         rb2d.velocity = shootSpeed * transform.up;
+        gameObject.tag = "Bullet_Bash";
         yield return new WaitForSeconds(.1f);
         bulletCollider.enabled = true;
     }
@@ -139,6 +161,7 @@ public class DebugBulletBehavior : MonoBehaviour
         transform.rotation = umbrellaRot * randomChange;
         rb2d.velocity = shootSpeed * transform.up;
         lifetime = 0;
+        gameObject.tag = "Bullet_Ricochet";
         yield return new WaitForSeconds(.1f);
         bulletCollider.enabled = true;
     }

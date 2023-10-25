@@ -15,7 +15,15 @@ public class DeathScreenBehavior : MonoBehaviour
     /// <summary>
     /// Quits the game
     /// </summary>
+<<<<<<< Updated upstream
     public void exitGame()
+=======
+<<<<<<< HEAD
+    public void ExitGame()
+=======
+    public void exitGame()
+>>>>>>> 6c1f16f42df958120d324e2bed590807675137c6
+>>>>>>> Stashed changes
     {
         Application.Quit();
     }
@@ -23,7 +31,15 @@ public class DeathScreenBehavior : MonoBehaviour
     /// <summary>
     /// Goes to main menu
     /// </summary>
+<<<<<<< Updated upstream
     public void mainMenu()
+=======
+<<<<<<< HEAD
+    public void MainMenu()
+=======
+    public void mainMenu()
+>>>>>>> 6c1f16f42df958120d324e2bed590807675137c6
+>>>>>>> Stashed changes
     {
         SceneManager.LoadScene("Main Menu");
     }
@@ -31,7 +47,15 @@ public class DeathScreenBehavior : MonoBehaviour
     /// <summary>
     /// Restarts game
     /// </summary>
+<<<<<<< Updated upstream
     public void restart()
+=======
+<<<<<<< HEAD
+    public void Restart()
+=======
+    public void restart()
+>>>>>>> 6c1f16f42df958120d324e2bed590807675137c6
+>>>>>>> Stashed changes
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

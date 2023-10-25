@@ -42,6 +42,7 @@ public class CowController : MonoBehaviour
         rb.velocity = movementInput * speed;
     }
 
+    /*
     /// <summary>
     /// Debug prototype code, remove whenever
     /// </summary>
@@ -71,7 +72,9 @@ public class CowController : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+        
     }
+        */
 
     /// <summary>
     /// Measures input and move player

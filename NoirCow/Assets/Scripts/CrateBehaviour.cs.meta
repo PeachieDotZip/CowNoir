@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:NoirCow/Assets/Scripts/CrateBehaviour.cs.meta
+guid: a665ff6461791a145bbe353c80079dc3
+========
+guid: 9aa22e5411d6a274ab5bb53764dc1204
+>>>>>>>> 6c1f16f42df958120d324e2bed590807675137c6:NoirCow/Assets/Scripts/DeathScreenBehavior.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
